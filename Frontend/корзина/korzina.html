@@ -7,39 +7,39 @@
     <title>Корзина</title>
 </head>
 <body>
-    <div class="container">
-        <ul id="cart-items"></ul>
-        <p id="total-price">Итоговая стоимость: 0 руб.</p>
-        <ul>
-            <li>ВЕРНУТЬСЯ И ПРОДОЛЖИТЬ ПОКУПКИ <a href="../главнаястр/index.html">здесь</a></li>
-            <li>КУПИТЬ <a href="#">здесь</a></li>
-        </ul>
-    </div>
+<div class="container">
+    <ul id="cart-items"></ul>
+    <p id="total-price">Итоговая стоимость: 0 руб.</p>
+    <ul>
+        <li>ВЕРНУТЬСЯ И ПРОДОЛЖИТЬ ПОКУПКИ <a href="../главнаястр/index.html">здесь</a></li>
+        <li>КУПИТЬ <a href="#">здесь</a></li>
+    </ul>
+</div>
 
-    <script type="module">
-        import BasketEventListener from "../basket_listener.js"
-        const basketListener = new BasketEventListener()
-        await basketListener.getCart()
+<script type="module">
+    import BasketEventListener from "../basket_listener.js"
 
-        // Обновление отображения корзины
-        const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = ''; // Очищаем текущий список
+    const basketListener = new BasketEventListener()
+    await basketListener.getCart()
 
-        // Проверяем, есть ли товары в корзине
-        if (basketListener.cart.length === 0) {
-            cartItemsContainer.innerHTML = '<li>Корзина пуста</li>';
-        } else {
-            console.log(basketListener.cart)
-            // Перебираем товары и отображаем их
-            basketListener.cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.name} - ${item.price} руб. (${item.count})`;
-                cartItemsContainer.appendChild(li);
-            });
-        }
+    // Обновление отображения корзины
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = ''; // Очищаем текущий список
 
-        // Отображаем общую стоимость
-        document.getElementById('total-price').textContent = `Итоговая стоимость: ${basketListener.totalPrice} руб.`;
-    </script>
+    // Проверяем, есть ли товары в корзине
+    if (basketListener.cart.length === 0) {
+        cartItemsContainer.innerHTML = '<li>Корзина пуста</li>';
+    } else {
+        // Перебираем товары и отображаем их
+        basketListener.cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - ${item.price} руб. (${item.count})`;
+            cartItemsContainer.appendChild(li);
+        });
+    }
+
+    // Отображаем общую стоимость
+    document.getElementById('total-price').textContent = `Итоговая стоимость: ${basketListener.totalPrice} руб.`;
+</script>
 </body>
 </html>
