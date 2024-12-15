@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рыбы</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="product-category">
+        <a href='../корзина/korzina.html'>КОРЗИНА</a>
+        <a href='../Фрукты/fruts.html'>ФРУКТЫ</a>
+        <a href='../Овощи/vegetables.html'>ОВОЩИ</a>
+        <a href='../Мясо/meat.html'>МЯСО</a>
+        <a href='../молоко/dairy.html'>МОЛОКО</a>
+    </div>
+
+    <div class="container">
+        <div class="product">
+            <img src="./Дорада или сибас_ что выбрать и как приготовить дома - The-Challenger_ru.jpg" alt="Дорадо">
+            <h3>Дорадо</h3>
+            <p class="price">180р.</p>
+            <button class="button" data-name="Дорадо" data-price="180">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./Карась золотой — рыба_ Описание карася золотого с картинками.jpg" alt="Карась">
+            <h3>Карась</h3>
+            <p class="price">150р.</p>
+            <button class="button" data-name="Карась" data-price="150">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./лосось.jpg" alt="Лосось">
+            <h3>Лосось</h3>
+            <p class="price">270р.</p>
+            <button class="button" data-name="Лосось" data-price="270">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./минтай.jpg" alt="Минтай">
+            <h3>Минтай</h3>
+            <p class="price">120р.</p>
+            <button class="button" data-name="Минтай" data-price="120">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./сайра.jpg" alt="Сайра">
+            <h3>Сайра</h3>
+            <p class="price">80р.</p>
+            <button class="button" data-name="Сайра" data-price="80">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./селедка.jpg" alt="Селедка">
+            <h3>Селедка</h3>
+            <p class="price">160р.</p>
+            <button class="button" data-name="Селедка" data-price="160">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./тунец.jpg" alt="Тунец">
+            <h3>Тунец</h3>
+            <p class="price">280р.</p>
+            <button class="button" data-name="Тунец" data-price="280">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./Форель_ польза и вред для здоровья_ Состав, витамины, минералы, калорийность.jpg" alt="Форель">
+            <h3>Форель</h3>
+            <p class="price">210р.</p>
+            <button class="button" data-name="Форель" data-price="210">Купить!</button>
+        </div>
+    </div>
+
+    <!-- Корзина -->
+    <div id="cart">
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Итоговая стоимость: 0 руб.</p>
+    </div>
+
+    <script type="module">
+        import BasketEventListener from '../basket_listener.js';
+        const basketEventListener = new BasketEventListener()
+        await basketEventListener.getCart()
+    </script>
+</body>
+</html>

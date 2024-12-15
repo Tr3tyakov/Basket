@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Овощи</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="product-category">
+        <a href='../корзина/korzina.html'>КОРЗИНА</a>
+        <a href='../Фрукты/fruts.html'>ФРУКТЫ</a>
+        <a href='../Мясо/meat.html'>МЯСО</a>
+        <a href='../Рыба/fish.html'>РЫБА</a>
+        <a href='../молоко/dairy.html'>МОЛОКО</a>
+    </div>
+    
+    <div class="container">
+        <div class="product">
+            <img src="./картошка.jpg" alt="Картофель">
+            <h3>Картофель</h3>
+            <p class="price">80р.</p>
+            <button class="button" data-name="Картофель" data-price="80">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./Морковь.jpg" alt="Морковь">
+            <h3>Морковь</h3>
+            <p class="price">150р.</p>
+            <button class="button" data-name="Морковь" data-price="150">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./капуста.jpg" alt="Капуста">
+            <h3>Капуста</h3>
+            <p class="price">170р.</p>
+            <button class="button" data-name="Капуста" data-price="170">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./баклажан.jpg" alt="Баклажан">
+            <h3>Баклажан</h3>
+            <p class="price">220р.</p>
+            <button class="button" data-name="Баклажан" data-price="220">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./огурец.jpg" alt="Огурец">
+            <h3>Огурец</h3>
+            <p class="price">100р.</p>
+            <button class="button" data-name="Огурец" data-price="100">Купить!</button>
+        </div>
+        
+        <div class="product">
+            <img src="./лук.jpg" alt="Лук">
+            <h3>Лук</h3>
+            <p class="price">60р.</p>
+            <button class="button" data-name="Лук" data-price="60">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./Помидор.jpg" alt="Помидор">
+            <h3>Помидор</h3>
+            <p class="price">180р.</p>
+            <button class="button" data-name="Помидор" data-price="180">Купить!</button>
+        </div>
+        
+        <div class="product">
+            <img src="./перец.jpg" alt="Болгарский перец">
+            <h3>Болгарский перец</h3>
+            <p class="price">200р.</p>
+            <button class="button" data-name="Болгарский перец" data-price="200">Купить!</button>
+        </div>
+    </div>
+
+    <!-- Корзина -->
+    <div id="cart">
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Итоговая стоимость: 0 руб.</p>
+    </div>
+
+    <script type="module">
+        import BasketEventListener from '../basket_listener.js';
+        const basketEventListener = new BasketEventListener()
+        await basketEventListener.getCart()
+    </script>
+</body>
+</html>

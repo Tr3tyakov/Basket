@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мясо</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="product-category">
+        <a href='../корзина/korzina.html'>КОРЗИНА</a>
+        <a href='../Фрукты/fruts.html'>ФРУКТЫ</a>
+        <a href='../Овощи/vegetables.html'>ОВОЩИ</a>
+        <a href='../Рыба/fish.html'>РЫБА</a>
+        <a href='../молоко/dairy.html'>МОЛОКО</a>
+    </div>
+    <div class="container">
+        <div class="product">
+            <img src="./курица.jpg" alt="Куриное филе">
+            <h3>Куриное филе</h3>
+            <p class="price">400р.</p>
+            <button class="button" data-name="Куриное филе" data-price="400">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./говядина.jpg" alt="Говядина">
+            <h3>Говядина</h3>
+            <p class="price">550р.</p>
+            <button class="button" data-name="Говядина" data-price="550">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./индейка.jpg" alt="Индейка">
+            <h3>Индейка</h3>
+            <p class="price">400р.</p>
+            <button class="button" data-name="Индейка" data-price="400">Купить!</button>
+        </div>
+
+        <div class="product">
+            <img src="./кролик.jpg" alt="Кролик">
+            <h3>Кролик</h3>
+            <p class="price">650р.</p>
+            <button class="button" data-name="Кролик" data-price="650">Купить!</button>
+        </div>
+        <div class="product">
+            <img src="./баранина.jpg" alt="Баранина">
+            <h3>Баранина</h3>
+            <p class="price">600р.</p>
+            <button class="button" data-name="Баранина" data-price="600">Купить!</button>
+        </div>
+        <div class="product">
+            <img src="./свинина.jpg" alt="Свинина">
+            <h3>Свинина</h3>
+            <p class="price">500р.</p>
+            <button class="button" data-name="Свинина" data-price="500">Купить!</button>
+        </div>
+    </div>
+
+     <!-- Корзина -->
+     <div id="cart">
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Итоговая стоимость: 0 руб.</p>
+    </div>
+
+    <script type="module">
+        import BasketEventListener from '../basket_listener.js';
+        const basketEventListener = new BasketEventListener()
+        await basketEventListener.getCart()
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavrushka</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="product-category">
+                <p onclick="goToCategory('../корзина/korzina.html')">КОРЗИНА</p>
+                <p onclick="goToCategory('../Фрукты/fruts.html')">ФРУКТЫ</p>
+                <p onclick="goToCategory('../Овощи/vegetables.html')">ОВОЩИ</p>
+                <p onclick="goToCategory('../Мясо/meat.html')">МЯСО</p>
+                <p onclick="goToCategory('../Рыба/fish.html')">РЫБА</p>
+                <p onclick="goToCategory('../молоко/dairy.html')">МОЛОКО</p>
+            </div>
+            <h1>LAVRUSHKA</h1>
+            <div class="product-image">
+                <img src="./тарелка.png" alt="Салат">
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="product-banner">
+            <div class="container">
+                <div class="product-text">
+                    <h2>СВЕЖИЕ И КАЧЕСТВЕННЫЕ ПРОДУКТЫ</h2>
+                    <p>ДЛЯ НАШИХ ПОСТОЯННЫХ ПОКУПАТЕЛЕЙ</p>
+                    <div class="discount-card">
+                        <img src="./карта.png" alt="Карта скидки">
+                        <div class="discount-text">
+                            <p>ПРИ ПРИОБРЕТЕНИИ КАРТЫ ЛОЯЛЬНОСТИ, КАЖДАЯ 6-я ПОКУПКА БУДЕТ СО СКИДКОЙ 50%</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="cart"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>CONTACT US:</p>
+            <ul>
+                <li>EMAIL: <a href="mailto:sshbna18@mail.ru">sshbna18@mail.ru</a></li>
+                <li>PHONE: +79104049590</li>
+                <li>INSTAGRAM: sshbna</li>
+            </ul>
+            <p>© 2024 Avrushka. Всегда к вашим услугам.</p>
+        </div>
+    </footer>
+
+    <script>
+        function goToCategory(category) {
+            window.location.href = category; 
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+default:
+  NAME: PRODUCTS
+  PORT: 8088
+  HOST: 0.0.0.0
+  CORS_ORIGINS: [ "*" ]
+
+  DEBUG: false
+  RELOADED: false
+  LIFESPAN: on
+
+  POSTGRES:
+    echo: false
+    echo_pool: false
+    driver: postgresql+asyncpg
+    port: 5432
+    user: postgres
+    host: localhost
+    password: postgres
+    database: postgres
+    pool_pre_ping: true
+    pool_recycle: 3000
