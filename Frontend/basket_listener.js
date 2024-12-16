@@ -7,7 +7,7 @@ class BasketEventListener {
 
     async getCart() {
         try {
-            const response = await fetch("http://0.0.0.0:8088/api/products")
+            const response = await fetch("http://localhost:8000/api/products")
             const data = await response.json()
             this.cart = data.cart
             this.totalPrice = data.total_price
@@ -35,7 +35,7 @@ class BasketEventListener {
 
     async _addToCart(name, price) {
         try {
-            await fetch('http://0.0.0.0:8088/api/create_product', {
+            await fetch('http://localhost:8000/api/create_product', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
