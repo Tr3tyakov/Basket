@@ -1,7 +1,7 @@
 default:
   NAME: PRODUCTS
   PORT: 8088
-  HOST: 0.0.0.0
+  HOST: localhost
   CORS_ORIGINS: [ "*" ]
 
   DEBUG: false
@@ -14,7 +14,7 @@ default:
     driver: postgresql+asyncpg
     port: 5432
     user: postgres
-    host: localhost
+    host: database
     password: postgres
     database: postgres
     pool_pre_ping: true

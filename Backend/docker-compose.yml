@@ -13,6 +13,20 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@database:5432/basket_database
+    ports:
+      - 8000:8000
+    command: sh -c "poetry install &&
+      poetry run uvicorn app.application:app --host 0.0.0.0 --port 8000"
+
 volumes:
   postgres_data:
 

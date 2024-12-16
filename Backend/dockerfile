@@ -1,0 +1,29 @@
+# Используем базовый образ Python
+FROM python:3.10-slim
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Устанавливаем необходимые системные зависимости
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential curl libpq-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем poetry
+RUN curl -sSL https://install.python-poetry.org | python3 - && \
+    ln -s /root/.local/bin/poetry /usr/local/bin/poetry
+
+# Копируем файлы для установки зависимостей
+COPY pyproject.toml poetry.lock ./
+
+# Устанавливаем зависимости с использованием poetry
+RUN poetry install
+
+# Копируем весь код приложения
+COPY . .
+
+# Открываем порт для доступа
+EXPOSE 8000
+
+# Команда по умолчанию для запуска сервиса
+CMD ["python", "main.py"]
